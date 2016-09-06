@@ -1,0 +1,16 @@
+machine:
+  environment:
+    PATH: ~/perl5/bin:$PATH
+
+dependencies:
+  cache_directories:
+  - ~/perl5
+  pre:
+  - if ! hash cpanm 2>/dev/null; then curl -L https://cpanmin.us | perl - -l ~/perl5 App::cpanminus local::lib; fi
+  - cpanm Dist::Zilla
+
+test:
+  override:
+  - dzil test
+  - dzil build
+  - cp Tilt-Email-BlueHornet-*.tar.gz $CIRCLE_ARTIFACTS
