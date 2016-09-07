@@ -1,7 +1,7 @@
 machine:
   environment:
-    PATH: ~/perl5/bin:$PATH
-    PERL5LIB: ~/perl5/lib/perl5/5.18.2
+    PATH: $HOME/perl5/bin:$PATH
+    PERL5LIB: $HOME/perl5/lib/perl5
 
 dependencies:
   cache_directories:
