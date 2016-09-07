@@ -9,6 +9,7 @@ dependencies:
   pre:
   - if ! hash cpanm 2>/dev/null; then curl -L https://cpanmin.us | perl - -l ~/perl5 App::cpanminus local::lib; fi
   - cpanm Dist::Zilla
+  - dzil listdeps | cpanm
 
 test:
   override:
